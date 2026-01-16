@@ -32,3 +32,4 @@ jobs:
         run: |
           cd core
           uv run python manage.py test api.tests.test_unit
+          uv run python manage.py test api.tests.test_integration
