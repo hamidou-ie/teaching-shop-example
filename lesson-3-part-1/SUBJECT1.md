@@ -130,7 +130,7 @@ WORKDIR /app
 # TODO 3: Install Python dependencies
 # Hint: Use RUN with uv sync
 # The --frozen flag ensures exact versions from uv.lock are used
-
+Run
 
 # Copy the rest of the application code
 COPY . .

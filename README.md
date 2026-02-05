@@ -10,7 +10,7 @@ This project provides a minimal yet functional shop application that serves as a
 
 This project is designed to teach the following DevOps concepts:
 
-| Topic | Description |
+| Topic | Description |f
 |-------|-------------|
 | **Deployment** | Manual and automated deployment strategies |
 | **CI/CD** | Building continuous integration and delivery pipelines |

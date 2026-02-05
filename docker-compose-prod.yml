@@ -1,0 +1,47 @@
+services:
+
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: boutique
+      POSTGRES_USER: boutique
+      POSTGRES_PASSWORD: boutique
+    volumes:
+      - data:/var/lib/postgresql/data
+
+
+
+  backend:
+    image: ghcr.io/hamidou-ie/boutique-backend:latest
+
+    # TODO 1: Set the build context to the backend directory
+    # Syntax: build: ./relative/path
+
+
+    # TODO 2: Map port 8000 from container to host
+    # Syntax:
+    #   ports:
+    #     - "host_port:container_port"
+    ports: 
+      - "5000:8000"
+    environment:
+      - DATABASE_HOST=db          # Service name = hostname!
+      - DATABASE_NAME=boutique
+      - DATABASE_USER=boutique
+      - DATABASE_PASSWORD=boutique
+  
+    depends_on:
+      - db
+
+    # volumes:
+    #   - ./backend:/app
+
+
+
+  frontend:
+    image: ghcr.io/hamidou-ie/boutique-frontend:latest
+    ports: 
+      - "80:80"
+
+volumes:
+  data:

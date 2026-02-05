@@ -13,6 +13,8 @@ interface RawProduct {
   description: string;
 }
 
+import { API_BASE } from '../env';
+
 export async function fetchProducts(): Promise<Product[]> {
   await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate network delay
   // const response = [{
@@ -34,7 +36,7 @@ export async function fetchProducts(): Promise<Product[]> {
   //     description: "La savane illustre parfaitement la jungle créative de votre bébé !",
   //     imageUrl: "/bavoir3.jpg"
   // }];
-  const response = await fetch("http://localhost:8000/api/products/").then(
+  const response = await fetch(`${API_BASE}/products/`).then(
     (res) =>
       res.json().then((data) =>
         data.map((p: RawProduct) => ({
