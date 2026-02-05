@@ -13,6 +13,7 @@ services:
 
   backend:
     build: ./backend
+
     # TODO 1: Set the build context to the backend directory
     # Syntax: build: ./relative/path
 
@@ -28,14 +29,19 @@ services:
       - DATABASE_NAME=boutique
       - DATABASE_USER=boutique
       - DATABASE_PASSWORD=boutique
-
+  
     depends_on:
       - db
+
+    volumes:
+      - ./backend:/app
 
 
 
   frontend:
-    build: ./frontend
+    build: 
+      context: ./frontend
+      
     ports: 
       - "8080:80"
 
