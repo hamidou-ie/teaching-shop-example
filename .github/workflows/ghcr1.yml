@@ -54,7 +54,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "docker-compose-prod.yml"
-          target: "/home/admin/docker-compose.yml"
+          target: "/home/admin"
 
   pull-from-ghcr:
     runs-on: ubuntu-latest
@@ -70,4 +70,4 @@ jobs:
           script: |
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
 
-            cd /home/admin && docker compose up --pull -d 
+            cd /home/admin && docker compose -f docker-compose-prod.yml up --pull -d 
