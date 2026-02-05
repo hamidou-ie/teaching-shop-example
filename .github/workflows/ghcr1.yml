@@ -70,4 +70,4 @@ jobs:
           script: |
             echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.repository_owner }} --password-stdin
 
-            cd /home/admin &&  docker compose up -d --pull
+            cd /home/admin && docker compose up --pull -d 
