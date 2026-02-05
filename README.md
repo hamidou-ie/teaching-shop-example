@@ -5,7 +5,7 @@ A simple e-commerce application designed as a hands-on learning platform for Dev
 ## Overview
 
 This project provides a minimal yet functional shop application that serves as a practical foundation for exploring modern DevOps workflows. Students will deploy, automate, and monitor this application while learning industry-standard tools and methodologies.
-
+j
 ## Learning Objectives
 
 This project is designed to teach the following DevOps concepts:
