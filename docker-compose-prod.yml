@@ -12,7 +12,7 @@ services:
 
 
   backend:
-    image: ghcr.io/${{ github.repository_owner }}/boutique-backend:latest
+    image: ghcr.io/hamidou-ie/boutique-backend:latest
 
     # TODO 1: Set the build context to the backend directory
     # Syntax: build: ./relative/path
@@ -39,7 +39,7 @@ services:
 
 
   frontend:
-    image: ghcr.io/${{ github.repository_owner }}/boutique-frontend:latest
+    image: ghcr.io/hamidou-ie/boutique-frontend:latest
     ports: 
       - "8080:80"
 
